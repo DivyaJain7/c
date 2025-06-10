@@ -1,13 +1,12 @@
 #include<iostream>
 using namespace std;
 int main(){
-    int n;
+    int n,i,j,k=0;
     cout<<"size of array:";
     cin>>n;
-    int arr[]={};
-    int array[]={};
-    int intersection[]={};
-    int i,j,k=0;
+    int arr[n]={};
+    int array[n]={};
+    int intersection[n]={};
     cout<<"Array 1:"<<endl;
     for(i=0;i<n;i++){
         cout<<"Element "<<i+1<<": ";
@@ -29,16 +28,16 @@ int main(){
     }
     cout<<endl;
     for(i=0;i<n;i++){
-        for(j=i;j<n;j++){
+        for(j=0;j<n;j++){
             if(arr[i]==array[j]){
                 intersection[k]=arr[i];
+                k++;
             }
-            k++;
         }
     }
     cout<<endl;
     cout<<"Intersection: ";
-    for(i=0;i<n;i++){
+    for(i=0;i<k;i++){
         cout<<intersection[i]<<" ";
     }
 return 0;
